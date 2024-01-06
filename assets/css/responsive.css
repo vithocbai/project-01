@@ -1,0 +1,122 @@
+/* PC */
+@media screen and (min-width: 992px) {
+    .header-table {
+        display: none;
+    }
+
+    .list .show-on-mobile {
+        display: none;
+    }
+}
+
+/* Table and Mobile */
+@media screen and (max-width: 991.98px) {
+    .navbar {
+        position: relative;
+    }
+
+    .navbar .list {
+        display: none;
+    }
+
+    .navbar .logo {
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+    }
+
+    .navbar .toggle-menu {
+        display: block;
+        border: none;
+        background: none;
+        outline: none;
+        font-size: 2.4rem;
+        color: var(--primary-color);
+    }
+
+    .overlay {
+        position: fixed;
+        inset: 0;
+        background: rgba(0, 0, 0, 0.3);
+        z-index: 1;
+        opacity: 1;
+        visibility: hidden;
+        transition: 0.3s linear;
+    }
+
+    .menu-checkbox:checked ~ .overlay {
+        opacity: 1;
+        visibility: visible;
+    }
+
+    .menu-drawer {
+        position: fixed;
+        inset: 0 40% 0 0;
+        background: #fff;
+        z-index: 2;
+        transform: translateX(-100%);
+        transition: 0.3s linear;
+        padding: 40px;
+    }
+
+    .menu-checkbox:checked ~ .menu-drawer {
+        transform: translateX(0);
+    }
+
+    .menu-drawer .close {
+        position: absolute;
+        top: 20px;
+        right: 20px;
+        display: block;
+        outline: none;
+        font-size: 2.4rem;
+        color: var(--primary-color);
+    }
+
+    .menu-drawer .logo {
+        display: block;
+        margin-top: 24px;
+    }
+
+    .menu-drawer .list a {
+        display: block;
+        padding: 12px 0;
+        color: #4f5361;
+        font-size: 1.4rem;
+        font-weight: 500;
+    }
+
+    .menu-drawer .list li:first-child {
+        margin-top: 30px;
+    }
+}
+
+/* Table */
+@media screen and (min-width: 768px) and (max-width: 991.98px) {
+    .list .show-on-mobile {
+        display: none;
+    }
+}
+
+/* Mobile */
+@media screen and (max-width: 767.98px) {
+    .navbar .action {
+        display: none;
+    }
+
+    .menu-drawer {
+        inset: 0 0 0 0;
+    }
+
+    .menu-drawer .list .hide-on-tablet {
+        color: var(--primary-color);
+        font-size: 1.6rem;
+        font-weight: 600;
+    }
+
+    .menu-drawer .separate {
+        border-top: 1px solid #ebebeb;
+    }
+
+}

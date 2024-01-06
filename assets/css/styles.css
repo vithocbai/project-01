@@ -26,10 +26,10 @@ a {
 .hover::before {
     background: hsl(45 100% 70%);
     content: "";
-    bottom: 10px;
-    left: 0;
-    right: 0;
-    top: 30px;
+    bottom: 12px;
+    left: 10px;
+    right: 10px;
+    top: 26px;
     position: absolute;
     transform: scaleX(0);
     transform-origin: right;
@@ -43,8 +43,7 @@ a {
 }
 
 .container {
-    width: 1110px;
-    max-width: calc(1110px - 24px);
+    width: min(1110px, 100% - 48px);
     margin-left: auto;
     margin-right: auto;
 }
@@ -85,7 +84,12 @@ a {
 
 /* ==== Header ==== */
 .header {
-    padding-top: 38px;
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0; 
+    z-index: 1;
+    padding: 38px 0; 
     background: #e6f0ff;
 }
 
@@ -126,6 +130,10 @@ a {
     height: 40px;
 }
 
+.navbar .toggle-menu {
+    display: none;
+}
+
 /* Hero */
 .hero {
     position: relative;
@@ -134,7 +142,7 @@ a {
     justify-content: center;
     padding-top: 39px;
     background: #e6f0ff;
-    height: calc(100vh - 90px);
+    height: 100vh;
 }
 
 .hero-content {
@@ -654,7 +662,7 @@ a {
 }
 
 .footer .copyright {
-    color: #c2c2c2;
+    color: #fff;
     font-size: 1.4rem;
     font-weight: 400;
 }

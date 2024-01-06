@@ -93,7 +93,10 @@
 
         <!-- Reset css -->
         <link rel="stylesheet" href="./assets/css/reset.css" />
+
+        <!-- Style css -->
         <link rel="stylesheet" href="./assets/css/styles.css" />
+        <link rel="stylesheet" href="./assets/css/responsive.css" />
     </head>
     <body>
         <!-- Header -->
@@ -101,13 +104,18 @@
             <div class="container">
                 <!-- Navbar -->
                 <nav class="navbar">
+                    <!-- Table/Mobile menu -->
+                    <label for="menu-checkbox" class="toggle-menu">
+                        <i class="fa-solid fa-bars"></i>
+                    </label>
+
                     <!-- Logo -->
-                    <a href="./">
-                        <img src="./assets/icon/Logo.svg" alt="" class="logo" />
+                    <a href="./" class="logo">
+                        <img src="./assets/icon/Logo.svg" alt="" />
                     </a>
 
                     <!-- Navigation -->
-                    <ul class="list">
+                    <ul class="list" id="pc-nav">
                         <li>
                             <a href="#!" class="hover">Home</a>
                         </li>
@@ -123,6 +131,12 @@
                         <li>
                             <a href="#!" class="hover">Contact</a>
                         </li>
+                        <li class="show-on-mobile separate">
+                            <a href="#!" >Sign In</a>
+                        </li>
+                        <li class="show-on-mobile">
+                            <a href="#!">Sign Up</a>
+                        </li>
                     </ul>
 
                     <!-- action -->
@@ -133,7 +147,44 @@
                 </nav>
             </div>
         </header>
-        <main>
+
+        <!-- Header Tablet/Mobile  -->
+        <header class="header-table">
+            <input
+                type="checkbox"
+                name="menu-checkbox"
+                id="menu-checkbox"
+                class="menu-checkbox"
+                hidden
+            />
+            <!-- Overlay -->
+            <label for="menu-checkbox" class="overlay"> </label>
+
+            <!-- Drawer -->
+            <div class="menu-drawer">
+                <!-- Close -->
+                <label for="menu-checkbox" class="close">
+                    <i class="fa-solid fa-xmark"></i>
+                </label>
+
+                <!-- Logo -->
+                <a href="./" class="logo">
+                    <img src="./assets/icon/Logo.svg" alt="" />
+                </a>
+
+                <!-- Navigation -->
+                <ul id="mobile-nav" class="list"></ul>
+                <script>
+                    const pcNav = document.querySelector("#pc-nav");
+                    const mobileNav = document.querySelector("#mobile-nav");
+
+                    mobileNav.innerHTML = pcNav.innerHTML;
+                </script>
+            </div>
+        </header>
+
+        <!-- Main -->
+        <main >
             <!-- Hero -->
             <div class="hero">
                 <div class="container">
@@ -619,7 +670,7 @@
                     </div>
                 </div>
             </div>
-        </main>
+        </main> 
 
         <!-- Footer -->
         <footer class="footer">
