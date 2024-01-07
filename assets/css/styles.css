@@ -84,7 +84,7 @@ a {
 
 /* ==== Header ==== */
 .header {
-    position: fixed;
+    position: sticky;
     top: 0;
     left: 0;
     right: 0; 
@@ -202,10 +202,13 @@ a {
 .brands {
     display: flex;
     align-items: center;
-    justify-content: space-between;
+    justify-content: center;
     margin-top: 70px;
 }
 
+.brands .brand-img {
+    padding: 0 30px;
+}
 /*  ====== Works ======  */
 .work {
     margin-top: 40px;
@@ -314,7 +317,8 @@ a {
 }
 
 .featured .list {
-    display: flex;
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
     gap: 30px;
     margin-top: 70px;
 }
@@ -389,7 +393,7 @@ a {
 }
 
 .container-features {
-    width: 1017px;
+    width: min(1017px, 100% - 48px);
     margin-left: auto;
     margin-right: auto;
 }
