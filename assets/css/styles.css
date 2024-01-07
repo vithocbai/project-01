@@ -238,7 +238,8 @@ a {
 }
 .work .desc {
     margin-top: 20px;
-    width: 41.3%;
+    width: 459px;
+    max-width: 100%;
     color: #5a6473;
     text-align: center;
     font-size: 1.6rem;
